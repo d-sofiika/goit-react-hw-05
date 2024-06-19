@@ -5,22 +5,42 @@ import MovieList from "../components/MovieList/MovieList"
 
 
 const HomePage = () => {
-  const [item, setItem] = useState([])
+  const [items, setItems] = useState([])
+    const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-  useEffect(() => {
+
+useEffect(() => {
     const getData = async () => {
-      const dataElements = await getMovies('/movie/popular', { language: 'en-US', page: 1 })
-      setItem(dataElements)
-      
-    }
-    getData()
-  }, [])
-  console.log("jjj", item);
-  
+      try {
+        setLoading(true);
+        const dataElements = await getMovies('/trending/movie/day', { language: 'en-US', page: 1 });
+       console.log('Fetched data:', dataElements); 
+        setItems(dataElements);
+      } catch (error) {
+        setError(true);
+        console.error('Error fetching movies:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error loading movie details.</div>;
+  }
+
+
+
   return (
     <div>
       <h1>Trending today</h1>
-      <MovieList movies={item}/>
+      <MovieList movies={items}/>
     </div>
   )
 }

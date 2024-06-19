@@ -16,7 +16,11 @@ export const getMovies = async (endpoint, params = {}) => {
       ...options,
       params
     });
-    return response.data.results;
+        console.log('API response:', response.data);
+     if (endpoint.includes('/trending/movie/day') || endpoint.includes('/search/movie')) {
+      return response.data.results;
+    }
+    return response.data;
   } catch (error) {
     console.error('Error fetching movies:', error);
   }
