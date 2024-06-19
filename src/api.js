@@ -16,10 +16,18 @@ export const getMovies = async (endpoint, params = {}) => {
       ...options,
       params
     });
-        console.log('API response:', response.data);
-     if (endpoint.includes('/trending/movie/day') || endpoint.includes('/search/movie')) {
-      return response.data.results;
-    }
+    return response.data.results;
+  } catch (error) {
+    console.error('Error fetching movies:', error);
+  }
+};
+
+export const getMovie = async (endpoint, params = {}) => {
+  try {
+    const response = await axios.get(`${url}${endpoint}`, {
+      ...options,
+      params
+    });
     return response.data;
   } catch (error) {
     console.error('Error fetching movies:', error);
