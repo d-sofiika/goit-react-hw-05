@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { getMovie } from "../api";
-import { useParams } from "react-router-dom";
+import { useParams, Link,Outlet } from "react-router-dom";
+
 
 const MovieDetailsPage = () => {
-  const { id } = useParams();
+  const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const fetchMovieDetails = async (id) => {
+  const fetchMovieDetails = async (movieId) => {
     try {
       setLoading(true);
-      const data = await getMovie(`/movie/${id}`);
+      const data = await getMovie(`/movie/${movieId}`);
       setMovieDetails(data);
       setLoading(false);
     } catch (error) {
@@ -19,11 +20,11 @@ const MovieDetailsPage = () => {
     }
   };
   useEffect(() => {
-    if (!id) {
+    if (!movieId) {
       return;
     }
-    fetchMovieDetails(id);
-  }, [id]);
+    fetchMovieDetails(movieId);
+  }, [movieId]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -32,17 +33,32 @@ const MovieDetailsPage = () => {
   if (error) {
     return <div>{error}</div>;
   }
-
+console.log('movieDetails', movieDetails)
   return (
+    <>
+    <button>Go Back</button>
     <div>
-      <img src={`https://image.tmdb.org/t/p/w200/${movieDetails.poster_path}`} alt="vgfvfc" />
-      <h1>{movieDetails.title}</h1>
-      <p>IMDB {movieDetails.popularity}</p>
-       <p>Overview</p>
-      <p>{movieDetails.overview}</p>
-      <p>Genres</p>
-       
-    </div>
+      
+      <img
+        src={
+          movieDetails &&
+          `https://image.tmdb.org/t/p/w200${movieDetails.poster_path}`
+        }
+        alt="poster"
+      />
+      <h1>{movieDetails && movieDetails.title}</h1>
+      <p>IMDB {movieDetails && movieDetails.popularity}</p>
+      <h2>Overview</h2>
+      <p>{movieDetails && movieDetails.overview}</p>
+      <div>
+        <h2>Additional information</h2>
+          <Link to="cast">Cast</Link>
+          <Link to="reviews">Reviews</Link>
+        
+      </div>
+      <Outlet />
+      </div>
+      </>
   );
 };
 

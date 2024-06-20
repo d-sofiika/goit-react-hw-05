@@ -16,7 +16,6 @@ const HomePage = () => {
     getData()
   }, [])
 
-  console.log('item', item)
   return (
     <div>
       <h1>Trending today</h1>
