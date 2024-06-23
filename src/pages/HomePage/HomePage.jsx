@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { getMovies } from "../api"
-import MovieList from "../components/MovieList/MovieList"
-
+import { getMovies } from "../../api"
+import MovieList from "../../components/MovieList/MovieList"
+import css from "./homePage.module.css"
 
 
 const HomePage = () => {
@@ -18,7 +18,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>Trending today</h1>
+      <h1 className={css.title}>Trending today</h1>
       <MovieList movies={item}/>
     </div>
   )

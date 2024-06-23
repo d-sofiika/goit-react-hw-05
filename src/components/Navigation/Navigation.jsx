@@ -1,9 +1,13 @@
 import { NavLink} from "react-router-dom";
-import css  from "./navigation.module.css"
+import css from "./navigation.module.css"
+import { GiFilmProjector } from "react-icons/gi";
 const Navigation = () => {
   return (
-    <div><nav>
-        <NavLink to="/" className={css.buildLinkClass}>
+    <div className={css.boxNavigation}>
+      <div><p ><GiFilmProjector className={css.icon} /></p></div>
+      <nav className={css.navigation}>
+       
+      <NavLink to="/" className={css.buildLinkClass}>
           Home
         </NavLink>
         <NavLink to="/movies" className={css.buildLinkClass}>

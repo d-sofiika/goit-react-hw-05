@@ -1,0 +1,91 @@
+.fullWrapper {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .fullWrapper {
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  /* desctop */
+  .fullWrapper {
+  }
+}
+.form {
+}
+
+.inputContainer {
+  display: flex;
+
+  flex-direction: column;
+}
+.input {
+  color: black;
+  border: 3px solid #000000;
+  padding: 10px;
+  border-radius: 50px;
+  outline: none;
+  text-align: center;
+  width: 200px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .input {
+    width: 300px;
+    font-size: 25px;
+  }
+}
+
+
+.input::placeholder {
+  text-align: center;
+}
+input:focus {
+ 
+  box-shadow: 0 0 10px #ff4500;
+}
+.btn {
+  color: #ff4500;
+  font-size: 15px;
+  padding: 10px 15px;
+  border: 3px solid #ff4500;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+.btn:hover{
+  color: black;
+    border: 3px solid black;
+    box-shadow: 0 0 10px #ff4500;
+    ;
+
+}
+.btn:focus {
+  color: black;
+  border: 3px solid black;
+  box-shadow: 0 0 10px #ff4500;
+  ;
+
+}
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .btn {
+    font-size: 25px;
+  }
+}
+
+
+.dscr {
+  color: black;
+}
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .dscr {
+    font-size: 35px;
+  }
+}

@@ -1,0 +1,61 @@
+.box{
+    margin-top: 25px;
+    text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+}
+.back{
+    display: flex;
+        align-items: center;
+        color: #FF4500;
+        margin-bottom: 10px;
+        font-size: 20px;
+       
+}
+.boxDetails{
+
+}
+.img{
+margin-bottom: 25px;
+}
+.title{
+
+}
+.rating{
+    font-size: 25px;
+border-bottom: 2px solid #FF4500;
+margin-bottom: 25px;
+}
+.miniTitle{
+
+}
+.dscr{
+
+}
+.boxInformation{
+margin-top: 25px;
+}
+.titleInformation{
+    color:#FF4500;
+    margin-bottom: 20px;
+}
+.wrapLink{
+display: flex;
+justify-content: center;
+gap: 20px;
+font-size: 20px;
+
+}
+.link{
+color: black;
+padding: 10px;
+border: 3px solid transparent;
+}
+.link:focus, .link:hover{
+color: black;
+box-shadow: 0 0 10px #ff4500;
+border-radius: 50px;
+    
+}

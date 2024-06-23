@@ -16,7 +16,7 @@ export const getMovies = async (endpoint, params = {}) => {
       ...options,
       params
     });
-    console.log('datares', response.data.results)
+
     return response.data.results;
   } catch (error) {
     console.error('Error fetching movies:', error);
@@ -29,7 +29,7 @@ export const getMovie = async (endpoint, params = {}) => {
       ...options,
       params
     });
-    console.log('data', response.data)
+   
     return response.data;
     
   } catch (error) {
