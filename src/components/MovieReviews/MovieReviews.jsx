@@ -39,7 +39,7 @@ const MovieReviews = () => {
   }
  console.log(movieReviews);
   return (<div className={css.box}>
-    {(!movieReviews.length === 0) ? 
+    {(movieReviews.length > 0) ? 
        
      ( 
       <ul className={css.list}>
