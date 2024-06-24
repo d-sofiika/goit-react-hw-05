@@ -1,0 +1,47 @@
+
+.titleAccent {
+  color: #ff4500;
+}
+.title {
+  padding-bottom: 10px;
+  border-bottom: 3px solid #ff4500;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 20px;
+}
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .message {
+    font-size: 30px;
+  }
+}
+
+.icon {
+  font-size: 50px;
+}
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .icon {
+    font-size: 70px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  /* desctop */
+  .icon {
+  }
+}
+.dscrMessage {
+  color: black;
+  
+}
+
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .dscrMessage {
+    font-size: 35px;
+  }
+}

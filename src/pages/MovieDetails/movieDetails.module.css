@@ -1,61 +1,118 @@
-.box{
+.box {
+  margin-top: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+}
+.back {
+  display: flex;
+  align-items: center;
+  color: #ff4500;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .back {
+    font-size: 50px;
+  }
+}
+
+.img {
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .img {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .title {
+    font-size: 70px;
+  }
+}
+
+.rating {
+  font-size: 25px;
+  border-bottom: 2px solid #ff4500;
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .rating {
+    font-size: 35px;
     margin-top: 25px;
-    text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: black;
+  }
 }
-.back{
-    display: flex;
-        align-items: center;
-        color: #FF4500;
-        margin-bottom: 10px;
-        font-size: 20px;
-       
-}
-.boxDetails{
 
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .miniTitle {
+    font-size: 45px;
+  }
 }
-.img{
-margin-bottom: 25px;
-}
-.title{
 
-}
-.rating{
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .dscr {
     font-size: 25px;
-border-bottom: 2px solid #FF4500;
-margin-bottom: 25px;
+  }
 }
-.miniTitle{
+.boxInformation {
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+.titleInformation {
+  color: #ff4500;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .titleInformation {
+    font-size: 45px;
+  }
+}
+.wrapLink {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+}
+@media screen and (min-width: 768px) {
+  /* tablet */
+  .wrapLink {
+    gap: 30px;
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+}
 
+.link {
+  color: black;
+  padding: 10px;
+  border-bottom: 3px solid #ff4500;
 }
-.dscr{
 
+.link:focus,
+.link:hover {
+  color: black;
+  box-shadow: 0 10px 10px -5px #ff4500;
 }
-.boxInformation{
-margin-top: 25px;
+.dscrMessage {
+  color: black;
+  text-align: center;
 }
-.titleInformation{
-    color:#FF4500;
-    margin-bottom: 20px;
-}
-.wrapLink{
-display: flex;
-justify-content: center;
-gap: 20px;
-font-size: 20px;
 
-}
-.link{
-color: black;
-padding: 10px;
-border: 3px solid transparent;
-}
-.link:focus, .link:hover{
-color: black;
-box-shadow: 0 0 10px #ff4500;
-border-radius: 50px;
-    
+@media screen and (min-width: 768px) {
+
+  /* tablet */
+  .dscrMessage {
+    font-size: 35px;
+  }
 }

@@ -1,23 +1,20 @@
-.title{padding-bottom: 15px ;
-border-bottom: 3px solid #FF4500;
-color: black;
-font-size: 35px;
-margin-bottom: 20px;
+.title {
+  padding-bottom: 15px;
+  border-bottom: 3px solid #ff4500;
+  color: black;
+  font-size: 35px;
+  margin-bottom: 20px;
 }
 @media screen and (min-width: 768px) {
-
-    /* tablet */
-.title{
-font-size: 50px;
-
-    }
+  /* tablet */
+  .title {
+    font-size: 50px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
-
-    /* desctop */
-.title{
+  /* desctop */
+  .title {
     font-size: 70px;
-
-    }
+  }
 }

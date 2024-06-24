@@ -15,9 +15,6 @@
   .fullWrapper {
   }
 }
-.form {
-}
-
 .inputContainer {
   display: flex;
 
@@ -41,12 +38,10 @@
   }
 }
 
-
 .input::placeholder {
   text-align: center;
 }
 input:focus {
- 
   box-shadow: 0 0 10px #ff4500;
 }
 .btn {
@@ -58,19 +53,15 @@ input:focus {
   margin-bottom: 20px;
   background-color: transparent;
 }
-.btn:hover{
+.btn:hover {
   color: black;
-    border: 3px solid black;
-    box-shadow: 0 0 10px #ff4500;
-    ;
-
+  border: 3px solid black;
+  box-shadow: 0 0 10px #ff4500;
 }
 .btn:focus {
   color: black;
   border: 3px solid black;
   box-shadow: 0 0 10px #ff4500;
-  ;
-
 }
 @media screen and (min-width: 768px) {
   /* tablet */
@@ -78,7 +69,6 @@ input:focus {
     font-size: 25px;
   }
 }
-
 
 .dscr {
   color: black;

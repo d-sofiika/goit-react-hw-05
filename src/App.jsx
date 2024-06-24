@@ -2,7 +2,7 @@
 import { Routes, Route,  } from "react-router-dom";
 import css from "./App.module.css"
 import HomePage from "./pages/HomePage/HomePage";
-import NotFoundPage from "./pages/NotFoundPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Navigation from "./components/Navigation/Navigation";
 import { Suspense, lazy } from "react";
 

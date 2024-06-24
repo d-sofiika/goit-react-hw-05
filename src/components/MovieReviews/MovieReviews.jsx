@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import { getMovies} from "../../api";
 import { useParams } from "react-router-dom";
-
-
+import css from  "./movieReviews.module.css"
+import { PiMaskSadLight } from "react-icons/pi";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
@@ -17,7 +17,7 @@ const MovieReviews = () => {
         const data = await getMovies(`/movie/${movieId}/reviews`);
       setMovieReviews(data);
     } catch (error) {
-      setError("Failed to fetch movie details");
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -31,25 +31,35 @@ const MovieReviews = () => {
   }, [movieId]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <h2 className={css.dscrMessage}>Loading...</h2>
   }
 
   if (error) {
-    return <div>{error}</div>;
+      return <h2 className={css.dscrMessage}>Failed to fetch movie details</h2>
   }
-
-  return (
-    <div>
-      
-      <ul>
+ console.log(movieReviews);
+  return (<div className={css.box}>
+    {(!movieReviews.length === 0) ? 
+       
+     ( 
+      <ul className={css.list}>
         {movieReviews.map((item) => (
-          <li key={item.id}>
-            <h3>Author: {item.author}</h3>
-            <p>{item.content}</p>
+          <li key={item.id}className={css.item}>
+            <h3  className={css.title}><span className={css.titleAccent}>Author:</span> {item.author}</h3>
+            <p className={css.text}>{item.content}</p>
           </li>
         ))}
       </ul>
+    )
+      : (
+        <div>
+              <p className={css.message} > Not found reviews!</p>
+    <p className={css.icon}><PiMaskSadLight  className={css.icon} /></p>
+        </div>)
+    }
     </div>
+   
+    
   );
 
 

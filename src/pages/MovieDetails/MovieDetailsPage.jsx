@@ -3,6 +3,8 @@ import { getMovie } from "../../api";
 import { useParams, Link, Outlet, useLocation } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import css from "./movieDetails.module.css";
+
+
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
@@ -19,7 +21,9 @@ const MovieDetailsPage = () => {
       setMovieDetails(data);
       setLoading(false);
     } catch (error) {
-      setError("Failed to fetch movie details");
+      setError(true);
+      
+    } finally {
       setLoading(false);
     }
   };
@@ -31,11 +35,11 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <h2 className={css.dscrMessage}>Loading...</h2>
   }
 
   if (error) {
-    return <div>{error}</div>;
+ return <h2 className={css.dscrMessage}>Failed to fetch movie details</h2>
   }
   console.log("movieDetails", movieDetails);
   return (

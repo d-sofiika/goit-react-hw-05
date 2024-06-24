@@ -30,7 +30,6 @@ const MoviesPage = () => {
         setError(true);
       }
     } catch (error) {
-      console.error("Error fetching movie data:", error);
       setError(true);
     } finally {
       setLoading(false);
@@ -68,7 +67,7 @@ const MoviesPage = () => {
       {loading && <h2 className={css.dscr}>Loading...</h2>}
       {error && <h2 className={css.dscr}>Failed to fetch movie details</h2>}
       {!loading && !error && movieSearch.length === 0 && (
-        <h2 className={css.dscr}>No results found</h2>
+        <h2 className={css.dscr}>No found results!</h2>
       )}
       {!loading && !error && movieSearch.length > 0 && (
         <MovieList movies={movieSearch} />

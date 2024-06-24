@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { getMovie } from "../../api";
 import { useParams } from "react-router-dom";
+import css from "./movieCast.module.css"
+import { FaPerson } from "react-icons/fa6";
+import { PiMaskSadLight } from "react-icons/pi";
+
 
 const MovieCast = () => {
   const { movieId } = useParams();
@@ -15,7 +19,7 @@ const MovieCast = () => {
           const truncatedActors = data.cast.slice(0, 10);
       setMovieActors(truncatedActors);
     } catch (error) {
-      setError("Failed to fetch movie details");
+      setError(true);
     } finally {
         setLoading(false);
     }
@@ -29,35 +33,41 @@ const MovieCast = () => {
   }, [movieId]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <h2 className={css.dscrMessage}>Loading...</h2>
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <h2 className={css.dscrMessage}>Failed to fetch movie details</h2>
   }
 
 
 
 
   return (
-    <div>
+    <div className={css.box}>
       
-      <ul>
+      {(movieActors.length > 0) ? (<ul className={css.list}>
         {movieActors.map((actor) => (
-          <li key={actor.cast_id}>
+          <li key={actor.cast_id} className={css.item}>
             {actor.profile_path ? (
-              <img
+              <img className={css.img}
                 src={`https://image.tmdb.org/t/p/w92/${actor.profile_path}`}
                 alt={actor.name}
               />
             ) : (
-              <p>No Image Available</p>
-                )}
-                <p>{actor.name}</p>
-            <p>Character: {actor.character}</p> 
+              <p className={css.icon}><FaPerson className={css.icon} /></p>
+            )}
+            <div className={css.textWrapper}>
+                <p className={css.text} >{actor.name}</p>
+            <p className={css.text}><span className={css.textAccent}>Character:</span><br /> {actor.character}</p> 
+          </div>
           </li>
         ))}
-      </ul>
+      </ul>) : (
+        <div className={css.boxMessage}>
+              <p className={css.message} > Not found cast!</p>
+    <p className={css.iconMessage}><PiMaskSadLight  className={css.iconMessage} /></p>
+        </div>)}
     </div>
   );
 };
